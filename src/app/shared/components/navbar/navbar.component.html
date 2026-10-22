@@ -1,0 +1,73 @@
+
+<aside class="sidebar">
+  <!-- Brand -->
+  <a class="sidebar-brand" routerLink="/dashboard">
+    <img
+      src="imgs/TaskFlow Productivity Logo.png"
+      alt="TaskFlow Logo"
+      class="sidebar-logo"
+    />
+    <span class="brand-text">TaskFlow</span>
+  </a>
+
+  <!-- Navigation -->
+  <nav class="sidebar-nav">
+    <p class="nav-section-title">WORKSPACE</p>
+
+    <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-item">
+      <i class="fa-solid fa-table-cells"></i>
+      <span>Dashboard</span>
+    </a>
+
+    <a routerLink="/projects" routerLinkActive="active" class="nav-item">
+      <i class="fa-solid fa-folder"></i>
+      <span>Projects</span>
+    </a>
+
+    <a routerLink="/my-tasks" routerLinkActive="active" class="nav-item">
+      <i class="fa-solid fa-check-circle"></i>
+      <span>My Tasks</span>
+    </a>
+
+    <a routerLink="/members" routerLinkActive="active" class="nav-item">
+      <i class="fa-solid fa-user-group"></i>
+      <span>Members</span>
+    </a>
+
+    <a routerLink="/notifications" routerLinkActive="active" class="nav-item">
+      <i class="fa-solid fa-bell"></i>
+      <span>Notifications</span>
+      <span class="notification-dot"></span>
+    </a>
+
+    <div class="nav-divider"></div>
+
+    <p class="nav-section-title">PREFERENCES</p>
+
+    <a routerLink="/settings" routerLinkActive="active" class="nav-item">
+      <i class="fa-solid fa-gear"></i>
+      <span>Settings</span>
+    </a>
+  </nav>
+
+  <!-- Bottom Section -->
+  <div class="sidebar-bottom">
+    <button type="button" class="nav-item logout-button">
+      <i class="fa-solid fa-right-from-bracket"></i>
+      <span>Logout</span>
+    </button>
+
+    <div class="profile-card">
+      <div class="profile-avatar">A</div>
+
+      <div class="profile-info">
+        <p class="profile-name">Abdelrahman</p>
+        <p class="profile-role">Frontend Developer</p>
+      </div>
+
+      <button type="button" class="profile-menu" aria-label="Profile options">
+        <i class="fa-solid fa-ellipsis"></i>
+      </button>
+    </div>
+  </div>
+</aside>
