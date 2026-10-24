@@ -1,0 +1,437 @@
+
+/* =========================
+   Dashboard Container
+========================= */
+
+.dashboard-container {
+  min-width: 0;
+  padding: var(--spacing-xl);
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+  color: var(--text-primary);
+}
+
+/* =========================
+   Dashboard Header
+========================= */
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.dashboard-title {
+  min-width: 0;
+}
+
+.dashboard-title h1 {
+  margin: 0 0 var(--spacing-xs);
+  color: var(--text-primary);
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  letter-spacing: -0.7px;
+}
+
+.dashboard-title p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+
+/* =========================
+   Statistics Cards
+========================= */
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.stat-card {
+  min-width: 0;
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background-color: var(--surface-color);
+  box-shadow: var(--shadow-sm);
+  transition:
+    box-shadow var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.stat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-lg);
+}
+
+.projects-icon {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.tasks-icon {
+  background-color: var(--secondary-light);
+  color: var(--secondary-color);
+}
+
+.completed-icon {
+  background-color: #dcfce7;
+  color: var(--success-color);
+}
+
+.stat-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-md);
+}
+
+.stat-value {
+  color: var(--text-primary);
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.stat-description {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.5;
+}
+
+/* =========================
+   Main Dashboard Panels
+========================= */
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: var(--spacing-lg);
+}
+
+.dashboard-panel {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background-color: var(--surface-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.panel-header h2 {
+  margin: 0 0 var(--spacing-xs);
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: 650;
+}
+
+.panel-header p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.5;
+}
+
+.panel-header-icon {
+  color: var(--text-muted);
+  font-size: var(--font-size-lg);
+}
+
+.panel-body {
+  padding: var(--spacing-lg);
+}
+
+/* =========================
+   View All Link
+========================= */
+
+.view-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-shrink: 0;
+  color: var(--primary-color);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.view-all-link:hover {
+  color: var(--primary-hover);
+}
+
+.view-all-link:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* =========================
+   Project Item
+========================= */
+
+.project-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  min-width: 0;
+}
+
+.project-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.project-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-info h3 {
+  overflow: hidden;
+  margin: 0 0 var(--spacing-xs);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Progress Bar */
+
+.project-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.progress-track {
+  flex: 1;
+  min-width: 0;
+  height: 7px;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  background-color: var(--secondary-light);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--primary-color);
+  transition: width var(--transition-normal);
+}
+
+.progress-label {
+  flex-shrink: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+/* Project Task Count */
+
+.project-task-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-shrink: 0;
+  padding-left: var(--spacing-sm);
+}
+
+.project-task-count span {
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.project-task-count small {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+}
+
+/* =========================
+   Upcoming Deadlines
+========================= */
+
+.deadline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  min-width: 0;
+}
+
+.deadline-indicator {
+  width: 4px;
+  min-height: 45px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background-color: var(--danger-color);
+}
+
+.deadline-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.deadline-info h3 {
+  overflow-wrap: anywhere;
+  margin: 0 0 var(--spacing-xs);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.deadline-info p {
+  margin: 0 0 var(--spacing-sm);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+.deadline-date {
+  flex-shrink: 0;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: var(--background-color);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width: 992px) {
+  .dashboard-container {
+    padding: var(--spacing-lg);
+  }
+
+  .dashboard-stats {
+    gap: var(--spacing-md);
+  }
+
+  .stat-card {
+    padding: var(--spacing-md);
+  }
+
+  .dashboard-content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: var(--spacing-md);
+  }
+
+  .dashboard-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .dashboard-title h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stat-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .stat-card:last-child {
+    grid-column: auto;
+  }
+
+  .stat-card {
+    padding: var(--spacing-md);
+  }
+
+  .panel-header,
+  .panel-body {
+    padding: var(--spacing-md);
+  }
+
+  .project-item {
+    gap: var(--spacing-sm);
+  }
+
+  .project-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .project-task-count {
+    padding-left: 0;
+  }
+
+  .deadline-item {
+    gap: var(--spacing-sm);
+  }
+
+  .deadline-date {
+    padding: var(--spacing-xs);
+  }
+}
