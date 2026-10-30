@@ -1,0 +1,116 @@
+
+<div class="projects-container">
+
+    <div class="projects-cards">
+
+        @if (viewMode === 'grid') {
+        <!-- Grid View -->
+        <div class="projects-grid">
+
+            <article class="project-card">
+
+            <header class="project-header">
+                <div class="project-icon">E</div>
+
+                <div class="project-title">
+                <h3>E-commerce Project</h3>
+                <span class="project-status status-active">Active</span>
+                </div>
+
+            </header>
+
+            <div class="project-description">
+                <p>
+                Build a complete e-commerce application with product
+                management, shopping cart, authentication, and checkout.
+                </p>
+            </div>
+
+            <footer class="project-footer">
+
+                <div class="project-numbers">
+                <span>2/8 tasks</span>
+                <span class="progress-percentage">75%</span>
+                </div>
+
+                <div
+                class="progress-bar"
+                role="progressbar"
+                aria-label="Project progress"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                >
+                <div class="progress-fill" style="width: 75%"></div>
+                </div>
+
+            </footer>
+
+            </article>
+
+        </div>
+        }
+
+        @else {
+        <!-- List View -->
+        <div class="project-table">
+
+            <table>
+
+            <thead>
+                <tr>
+                <th>Project</th>
+                <th>Status</th>
+                <th>Progress</th>
+                <th>Tasks</th>
+                <th>Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+
+                <td>
+                    <div class="table-project-info">
+                    <div class="project-icon">E</div>
+                    <span>E-commerce Project</span>
+                    </div>
+                </td>
+
+                <td>
+                    <span class="project-status status-active">Active</span>
+                </td>
+
+                <td>
+                    <div class="table-progress">
+                    <div
+                        class="progress-bar"
+                        role="progressbar"
+                        aria-label="E-commerce Project progress"
+                        aria-valuenow="75"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                    >
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                    <span class="progress-percentage">75%</span>
+                    </div>
+                </td>
+
+                <td>2/8</td>
+
+                <td>
+                    <time datetime="2026-10-30">Oct 30, 2026</time>
+                </td>
+
+                </tr>
+            </tbody>
+
+            </table>
+
+        </div>
+        }
+
+    </div>
+
+</div>
