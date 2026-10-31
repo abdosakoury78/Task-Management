@@ -1,0 +1,139 @@
+
+<div class="tasks-container">
+
+    <!-- Search and Filters -->
+    <div class="tasks-filter">
+
+        <div class="tasks-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+                type="search"
+                placeholder="Search tasks..."
+                aria-label="Search tasks"
+            >
+        </div>
+
+        <select aria-label="Filter by priority" >
+            <option value="all" selected>All Priorities</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>
+
+        <select aria-label="Filter by project">
+            <option value="all" selected>All Projects</option>
+            <option value="ecommerce">E-commerce Platform</option>
+            <option value="taskflow">TaskFlow Dashboard</option>
+            <option value="portfolio">Portfolio Website</option>
+        </select>
+
+    </div>
+
+    <!-- Tasks Table -->
+    <div class="tasks-table">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Project</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Due Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <!-- Task 1 -->
+                <tr>
+                    <td>
+                        <div class="task-info">
+                            <span class="task-checkbox completed">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                            <span class="task-name completed-text">Design Login Page</span>
+                        </div>
+                    </td>
+                    <td>E-commerce Platform</td>
+                    <td><span class="task-status status-done">Done</span></td>
+                    <td><span class="task-priority priority-medium">Medium</span></td>
+                    <td><time datetime="2026-10-28">Oct 28, 2026</time></td>
+                </tr>
+
+                <!-- Task 2 -->
+                <tr>
+                    <td>
+                        <div class="task-info">
+                            <span class="task-checkbox"></span>
+                            <span class="task-name">Build Shopping Cart</span>
+                        </div>
+                    </td>
+                    <td>E-commerce Platform</td>
+                    <td><span class="task-status status-progress">In Progress</span></td>
+                    <td><span class="task-priority priority-high">High</span></td>
+                    <td><time datetime="2026-11-03">Nov 3, 2026</time></td>
+                </tr>
+
+                <!-- Task 3 -->
+                <tr>
+                    <td>
+                        <div class="task-info">
+                            <span class="task-checkbox"></span>
+                            <span class="task-name">Create Dashboard Layout</span>
+                        </div>
+                    </td>
+                    <td>TaskFlow Dashboard</td>
+                    <td><span class="task-status status-progress">In Progress</span></td>
+                    <td><span class="task-priority priority-high">High</span></td>
+                    <td><time datetime="2026-11-05">Nov 5, 2026</time></td>
+                </tr>
+
+                <!-- Task 4 -->
+                <tr>
+                    <td>
+                        <div class="task-info">
+                            <span class="task-checkbox"></span>
+                            <span class="task-name">Write API Documentation</span>
+                        </div>
+                    </td>
+                    <td>TaskFlow Dashboard</td>
+                    <td><span class="task-status status-todo">To Do</span></td>
+                    <td><span class="task-priority priority-medium">Medium</span></td>
+                    <td><time datetime="2026-11-08">Nov 8, 2026</time></td>
+                </tr>
+
+                <!-- Task 5 -->
+                <tr>
+                    <td>
+                        <div class="task-info">
+                            <span class="task-checkbox"></span>
+                            <span class="task-name">Fix Responsive Navigation</span>
+                        </div>
+                    </td>
+                    <td>Portfolio Website</td>
+                    <td><span class="task-status status-todo">To Do</span></td>
+                    <td><span class="task-priority priority-low">Low</span></td>
+                    <td><time datetime="2026-11-12">Nov 12, 2026</time></td>
+                </tr>
+
+                <!-- Task 6 -->
+                <tr>
+                    <td>
+                        <div class="task-info">
+                            <span class="task-checkbox"></span>
+                            <span class="task-name">Implement User Authentication</span>
+                        </div>
+                    </td>
+                    <td>E-commerce Platform</td>
+                    <td><span class="task-status status-progress">In Progress</span></td>
+                    <td><span class="task-priority priority-high">High</span></td>
+                    <td><time datetime="2026-11-01">Nov 1, 2026</time></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

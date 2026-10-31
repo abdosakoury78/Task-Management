@@ -1,0 +1,137 @@
+
+/* =========================
+   TASKS CONTAINER
+========================= */
+
+.tasks-container {
+  width: 100%;
+  padding: var(--spacing-lg);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+}
+
+/* =========================
+   TASKS STATUS NAVBAR
+========================= */
+
+.tasks-navbar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  padding: var(--spacing-sm);
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================
+   STATUS BUTTONS
+========================= */
+
+.status {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: 0.7rem var(--spacing-lg);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.status:hover {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+}
+
+/* Selected status */
+
+.status.active {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  border-color: var(--primary-light);
+  font-weight: 600;
+}
+
+/* =========================
+   STATUS LABEL
+========================= */
+
+.status-label {
+  line-height: 1.5;
+}
+
+/* =========================
+   STATUS COUNT
+========================= */
+
+.status-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 var(--spacing-sm);
+  background-color: var(--secondary-light);
+  color: var(--text-secondary);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.status.active .status-count {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Keyboard accessibility */
+
+.status:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+  .tasks-container {
+    padding: var(--spacing-sm);
+  }
+
+  .tasks-navbar {
+    gap: var(--spacing-xs);
+    overflow-x: auto;
+  }
+
+  .status {
+    flex-shrink: 0;
+    padding: 0.65rem var(--spacing-md);
+  }
+}
+
+@media (max-width: 380px) {
+  .status {
+    gap: var(--spacing-xs);
+    padding: 0.6rem var(--spacing-sm);
+    font-size: var(--font-size-xs);
+  }
+
+  .status-count {
+    min-width: 20px;
+    height: 20px;
+    padding: 0 0.35rem;
+  }
+}

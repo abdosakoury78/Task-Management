@@ -4,29 +4,29 @@
 
         <!-- Search -->
         <div class="projects-search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input
-            type="search"
-            placeholder="Search projects..."
-            aria-label="Search projects"
-        >
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+                type="search"
+                placeholder="Search projects..."
+                aria-label="Search projects"
+            >
         </div>
 
         <!-- View options -->
         <div class="projects-view-icons">
-        <button #gridBtn type="button" class="view-btn active" aria-label="Grid view" (click)="changeViewMode('grid')">
-            <i class="fa-solid fa-grip"></i>
-        </button>
+            <button #gridBtn type="button" [class.active] = "viewMode === 'grid'" class="view-btn" aria-label="Grid view" (click)="changeViewMode('grid')">
+                <i class="fa-solid fa-grip"></i>
+            </button>
 
-        <button #listBtn type="button" class="view-btn" aria-label="List view" (click)="changeViewMode('list')">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+            <button #listBtn type="button" [class.active] = "viewMode === 'list'" class="view-btn" aria-label="List view" (click)="changeViewMode('list')">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
 
         <!-- New Project -->
         <button type="button" class="projects-new-project-btn">
-        <i class="fa-solid fa-plus"></i>
-        <span>New Project</span>
+            <i class="fa-solid fa-plus"></i>
+            <span>New Project</span>
         </button>
 
     </div>

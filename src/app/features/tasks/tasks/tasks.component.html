@@ -1,0 +1,54 @@
+
+<div class="tasks-container">
+
+    <nav class="tasks-navbar" aria-label="Filter tasks by status">
+
+        <button
+        type="button"
+        class="status"
+        [class.active]="filterStatus === 'all'"
+        [attr.aria-pressed]="filterStatus === 'all'"
+        (click)="changeStatus('all')"
+        >
+            <span class="status-label">All Tasks</span>
+            <span class="status-count">19</span>
+        </button>
+
+        <button
+        type="button"
+        class="status"
+        [class.active]="filterStatus === 'todo'"
+        [attr.aria-pressed]="filterStatus === 'todo'"
+        (click)="changeStatus('todo')"
+        >
+            <span class="status-label">To Do</span>
+            <span class="status-count">1</span>
+        </button>
+
+        <button
+        type="button"
+        class="status"
+        [class.active]="filterStatus === 'progress'"
+        [attr.aria-pressed]="filterStatus === 'progress'"
+        (click)="changeStatus('progress')"
+        >
+            <span class="status-label">In Progress</span>
+            <span class="status-count">6</span>
+        </button>
+
+        <button
+        type="button"
+        class="status"
+        [class.active]="filterStatus === 'done'"
+        [attr.aria-pressed]="filterStatus === 'done'"
+        (click)="changeStatus('done')"
+        >
+            <span class="status-label">Done</span>
+            <span class="status-count">12</span>
+        </button>
+
+    </nav>
+
+    <app-tasks-body></app-tasks-body>
+
+</div>
