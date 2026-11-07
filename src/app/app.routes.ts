@@ -8,6 +8,7 @@ export const routes: Routes = [
             {path: '', loadComponent: () => import('./features/dashboard/dashboard/dashboard.component').then(m => m.DashboardComponent)},
             {path: 'projects', loadComponent: () => import('./features/projects/projects/projects.component').then(m => m.ProjectsComponent)},
             {path: 'my-tasks', loadComponent: () => import('./features/tasks/tasks/tasks.component').then(m => m.TasksComponent)},
+            {path: 'members', loadComponent: () => import('./features/members/members/members.component').then(m => m.MembersComponent)},
         ]
     }
 ];
