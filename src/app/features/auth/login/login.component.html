@@ -1,0 +1,79 @@
+<div class="login-container">
+
+  <!-- Login Header -->
+  <div class="login-header">
+    <h2>Welcome Back</h2>
+    <p>Enter your credentials to access your account.</p>
+  </div>
+
+  <!-- Login Form -->
+  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email Address</label>
+
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="Enter your email"
+        autocomplete="email"
+      />
+
+      <!-- Email Validation -->
+      @if (loginForm.get('email')?.touched && loginForm.get('email')?.invalid) {
+        <small class="error-message">
+          Please enter a valid email address.
+        </small>
+      }
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <div class="password-label">
+        <label for="password">Password</label>
+
+        <a routerLink="/auth/forgot-password" class="forgot-password">
+          Forgot password?
+        </a>
+      </div>
+
+      <div class="password-input">
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          placeholder="Enter your password"
+          autocomplete="current-password"
+        />
+      </div>
+
+      <!-- Password Validation -->
+      @if (loginForm.get('password')?.touched && loginForm.get('password')?.invalid) {
+        <small class="error-message">
+          Password is required.
+        </small>
+      }
+    </div>
+
+    <!-- Submit -->
+    <button
+      type="submit"
+      class="login-button"
+      [disabled]="loginForm.invalid"
+    >
+      Sign In
+    </button>
+
+  </form>
+
+  <!-- Register Link -->
+  <div class="register-link">
+    <p>
+      Don't have an account?
+      <a routerLink="/auth/register">Create an account</a>
+    </p>
+  </div>
+
+</div>

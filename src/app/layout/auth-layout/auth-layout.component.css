@@ -1,0 +1,140 @@
+
+/* Main Layout */
+
+.app-auth-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background-color: var(--background-color);
+}
+
+/* Branding Section */
+
+.project-flow-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 4.4vw, 5rem);
+  background-color: #111827;
+  color: #ffffff;
+}
+
+/* Brand */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  width: fit-content;
+  margin-bottom: auto;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.title-project {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+
+/* Introduction */
+
+.auth-intro {
+  margin-top: var(--spacing-2xl);
+}
+
+.title {
+  margin: 0 0 var(--spacing-lg);
+  color: #ffffff;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.description {
+  max-width: 540px;
+  margin: 0;
+  color: #d1d5db;
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+}
+
+/* Features */
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin: var(--spacing-2xl) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.features li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  color: #e5e7eb;
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+.features li i {
+  margin-top: 3px;
+  color: #818cf8;
+  font-size: var(--font-size-lg);
+}
+
+/* Footer */
+
+.auth-footer {
+  margin: auto 0 0;
+  padding-top: var(--spacing-xl);
+  color: #9ca3af;
+  font-size: var(--font-size-xs);
+}
+
+/* Authentication Content */
+
+.auth-content {
+  padding: var(--spacing-xl);
+  background-color: var(--background-color);
+  margin: auto 0;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .app-auth-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .project-flow-info {
+    padding: var(--spacing-xl);
+  }
+
+  .brand {
+    margin-bottom: 0;
+  }
+
+  .auth-intro {
+    margin-top: var(--spacing-xl);
+  }
+
+  .features {
+    gap: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
+  }
+
+  .auth-footer {
+    margin-top: var(--spacing-md);
+  }
+
+  .auth-content {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+}
