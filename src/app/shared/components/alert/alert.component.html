@@ -1,0 +1,48 @@
+@if (isVisible) {
+  <div
+    class="alert alert-{{ type }}"
+    [attr.role]="type === 'error' || type === 'warning' ? 'alert' : 'status'"
+    [attr.aria-live]="type === 'error' || type === 'warning' ? 'assertive' : 'polite'"
+  >
+
+    <!-- Alert Icon -->
+    <div class="alert-icon">
+      @switch (type) {
+        @case ('success') {
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+        }
+        @case ('error') {
+          <i class="fa-solid fa-circle-xmark" aria-hidden="true"></i>
+        }
+        @case ('warning') {
+          <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+        }
+        @case ('info') {
+          <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+        }
+      }
+    </div>
+
+    <!-- Alert Content -->
+    <div class="alert-content">
+      @if (title) {
+        <h4 class="alert-title">{{ title }}</h4>
+      }
+
+      <p class="alert-message">{{ message }}</p>
+    </div>
+
+    <!-- Close Button -->
+    @if (dismissible) {
+      <button
+        type="button"
+        class="alert-close"
+        aria-label="Close alert"
+        (click)="closeAlert()"
+      >
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    }
+
+  </div>
+}

@@ -1,0 +1,164 @@
+
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Abdelrahman Kamal",
+      "email": "abdelrahman@example.com",
+      "password": "123456",
+      "role": "Frontend Developer",
+      "initials": "AK"
+    },
+    {
+      "id": "2",
+      "name": "Ahmed Hassan",
+      "email": "ahmed@example.com",
+      "password": "123456",
+      "role": "Project Manager",
+      "initials": "AH"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "name": "E-commerce Platform",
+      "description": "Build a complete e-commerce application with product management, shopping cart, authentication, and checkout.",
+      "status": "active",
+      "progress": 75,
+      "startDate": "2026-10-30",
+      "ownerId": "1"
+    },
+    {
+      "id": "2",
+      "name": "TaskFlow Dashboard",
+      "description": "Create a task management dashboard for tracking projects, tasks, team members, and deadlines.",
+      "status": "active",
+      "progress": 40,
+      "startDate": "2026-10-20",
+      "ownerId": "1"
+    },
+    {
+      "id": "3",
+      "name": "Portfolio Website",
+      "description": "Build a responsive portfolio website to showcase projects and professional experience.",
+      "status": "active",
+      "progress": 20,
+      "startDate": "2026-10-15",
+      "ownerId": "1"
+    }
+  ],
+  "projectMembers": [
+    {
+      "id": "1",
+      "projectId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "projectId": "1",
+      "userId": "2"
+    },
+    {
+      "id": "3",
+      "projectId": "2",
+      "userId": "1"
+    },
+    {
+      "id": "4",
+      "projectId": "2",
+      "userId": "2"
+    },
+    {
+      "id": "5",
+      "projectId": "3",
+      "userId": "1"
+    },
+    {
+      "id": "6",
+      "projectId": "3",
+      "userId": "2"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Design Login Page",
+      "description": "Design and implement the customer login page.",
+      "projectId": "1",
+      "assigneeId": "1",
+      "status": "done",
+      "priority": "medium",
+      "dueDate": "2026-10-28"
+    },
+    {
+      "id": "2",
+      "title": "Build Shopping Cart",
+      "description": "Implement the shopping cart and checkout flow.",
+      "projectId": "1",
+      "assigneeId": "1",
+      "status": "inProgress",
+      "priority": "high",
+      "dueDate": "2026-11-13"
+    },
+    {
+      "id": "3",
+      "title": "Create Dashboard Layout",
+      "description": "Build the main responsive layout for the task management dashboard.",
+      "projectId": "2",
+      "assigneeId": "1",
+      "status": "inProgress",
+      "priority": "high",
+      "dueDate": "2026-11-15"
+    },
+    {
+      "id": "4",
+      "title": "Write API Documentation",
+      "description": "Document the API endpoints and expected request and response data.",
+      "projectId": "2",
+      "assigneeId": "2",
+      "status": "todo",
+      "priority": "medium",
+      "dueDate": "2026-11-16"
+    },
+    {
+      "id": "5",
+      "title": "Fix Responsive Navigation",
+      "description": "Improve navigation behavior on mobile and tablet screen sizes.",
+      "projectId": "3",
+      "assigneeId": "2",
+      "status": "todo",
+      "priority": "low",
+      "dueDate": "2026-11-18"
+    },
+    {
+      "id": "6",
+      "title": "Implement User Authentication",
+      "description": "Add the user authentication flow to the e-commerce application.",
+      "projectId": "1",
+      "assigneeId": "1",
+      "status": "inProgress",
+      "priority": "high",
+      "dueDate": "2026-11-20"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "type": "task_assigned",
+      "recipientId": "1",
+      "actorId": "2",
+      "taskId": "2",
+      "read": false,
+      "createdAt": "2026-11-12T09:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "type": "task_assigned",
+      "recipientId": "1",
+      "actorId": "2",
+      "taskId": "2",
+      "read": true,
+      "createdAt": "2026-11-11T08:30:00.000Z"
+    }
+  ]
+}

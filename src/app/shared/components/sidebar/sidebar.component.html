@@ -52,17 +52,17 @@
 
   <!-- Bottom Section -->
   <div class="sidebar-bottom">
-    <button type="button" class="nav-item logout-button">
+    <button type="button" class="nav-item logout-button" aria-label="Logout" (click)="logout()">
       <i class="fa-solid fa-right-from-bracket"></i>
       <span>Logout</span>
     </button>
 
     <div class="profile-card">
-      <div class="profile-avatar">A</div>
+      <div class="profile-avatar">{{this.user?.initials}}</div>
 
       <div class="profile-info">
-        <p class="profile-name">Abdelrahman</p>
-        <p class="profile-role">Frontend Developer</p>
+        <p class="profile-name">{{this.user?.name}}</p>
+        <p class="profile-role">{{this.user?.role}}</p>
       </div>
 
       <button type="button" class="profile-menu" aria-label="Profile options">

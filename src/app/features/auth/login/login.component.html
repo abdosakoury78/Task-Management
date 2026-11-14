@@ -6,11 +6,27 @@
     <p>Enter your credentials to access your account.</p>
   </div>
 
+  <!-- Alert -->
+  @if (showAlert) {
+    <app-alert
+      [type]="alertType"
+      [title]="alertTitle"
+      [message]="alertMessage"
+      [dismissible]="true"
+      (closed)="closeAlert()"
+    ></app-alert>
+  }
+
   <!-- Login Form -->
-  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form
+    class="login-form"
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+  >
 
     <!-- Email -->
     <div class="form-group">
+
       <label for="email">Email Address</label>
 
       <input
@@ -21,16 +37,21 @@
         autocomplete="email"
       />
 
-      <!-- Email Validation -->
       @if (loginForm.get('email')?.touched && loginForm.get('email')?.invalid) {
         <small class="error-message">
-          Please enter a valid email address.
+          @if (loginForm.get('email')?.hasError('required')) {
+            Email is required.
+          } @else if (loginForm.get('email')?.hasError('email')) {
+            Please enter a valid email address.
+          }
         </small>
       }
+
     </div>
 
     <!-- Password -->
     <div class="form-group">
+
       <div class="password-label">
         <label for="password">Password</label>
 
@@ -49,12 +70,20 @@
         />
       </div>
 
-      <!-- Password Validation -->
       @if (loginForm.get('password')?.touched && loginForm.get('password')?.invalid) {
         <small class="error-message">
-          Password is required.
+          @if (loginForm.get('password')?.hasError('required')) {
+            Password is required.
+          } @else if (loginForm.get('password')?.hasError('minlength')) {
+            Password must be at least 6 characters.
+          } @else if (loginForm.get('password')?.hasError('maxlength')) {
+            Password cannot exceed 20 characters.
+          } @else if (loginForm.get('password')?.hasError('pattern')) {
+            Password must contain uppercase, lowercase, number and special character.
+          }
         </small>
       }
+
     </div>
 
     <!-- Submit -->
