@@ -14,11 +14,11 @@
 
         <!-- View options -->
         <div class="projects-view-icons">
-            <button #gridBtn type="button" [class.active] = "viewMode === 'grid'" class="view-btn" aria-label="Grid view" (click)="changeViewMode('grid')">
+            <button type="button" [class.active] = "viewMode === 'grid'" class="view-btn" aria-label="Grid view" (click)="changeViewMode('grid')">
                 <i class="fa-solid fa-grip"></i>
             </button>
 
-            <button #listBtn type="button" [class.active] = "viewMode === 'list'" class="view-btn" aria-label="List view" (click)="changeViewMode('list')">
+            <button type="button" [class.active] = "viewMode === 'list'" class="view-btn" aria-label="List view" (click)="changeViewMode('list')">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
