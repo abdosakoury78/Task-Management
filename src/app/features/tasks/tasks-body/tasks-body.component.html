@@ -4,8 +4,10 @@
     <!-- Search and Filters -->
     <div class="tasks-filter">
 
+        <!-- Search -->
         <div class="tasks-search">
             <i class="fa-solid fa-magnifying-glass"></i>
+
             <input
                 type="search"
                 placeholder="Search tasks..."
@@ -13,18 +15,23 @@
             >
         </div>
 
-        <select aria-label="Filter by priority" >
-            <option value="all" selected>All Priorities</option>
+        <!-- Priority Filter -->
+        <select aria-label="Filter by priority" (change)="selectedPriority = $any($event.target).value">
+            <option value="all">All Priorities</option>
             <option value="high">High</option>
             <option value="medium">Medium</option>
             <option value="low">Low</option>
         </select>
 
-        <select aria-label="Filter by project">
-            <option value="all" selected>All Projects</option>
-            <option value="ecommerce">E-commerce Platform</option>
-            <option value="taskflow">TaskFlow Dashboard</option>
-            <option value="portfolio">Portfolio Website</option>
+        <!-- Project Filter -->
+        <select aria-label="Filter by project" (change)="selectedProjectId = $any($event.target).value">
+            <option value="all">All Projects</option>
+
+            @for (project of projects; track project.id) {
+                <option [value]="project.id">
+                    {{ project.name }}
+                </option>
+            }
         </select>
 
     </div>
@@ -44,93 +51,71 @@
             </thead>
 
             <tbody>
+                @for (task of getFilteredTasks(); track task.id) {
 
-                <!-- Task 1 -->
-                <tr>
-                    <td>
-                        <div class="task-info">
-                            <span class="task-checkbox completed">
-                                <i class="fa-solid fa-check"></i>
+                    <tr>
+                        <!-- Task -->
+                        <td>
+                            <div class="task-info">
+
+                                <span
+                                    class="task-name"
+                                    [class.completed-text]="task.status === 'done'"
+                                >
+                                    {{ task.title }}
+                                </span>
+
+                            </div>
+                        </td>
+
+                        <!-- Project -->
+                        <td>
+                            {{ task.projectName || 'Unknown Project' }}
+                        </td>
+
+                        <!-- Status -->
+                        <td>
+                            <span
+                                class="task-status"
+                                [class.status-todo]="task.status === 'todo'"
+                                [class.status-progress]="task.status === 'in-progress'"
+                                [class.status-done]="task.status === 'done'"
+                            >
+                                {{ task.status === 'in-progress' ? 'In Progress' :
+                                   task.status === 'todo' ? 'To Do' : 'Done' }}
                             </span>
-                            <span class="task-name completed-text">Design Login Page</span>
-                        </div>
-                    </td>
-                    <td>E-commerce Platform</td>
-                    <td><span class="task-status status-done">Done</span></td>
-                    <td><span class="task-priority priority-medium">Medium</span></td>
-                    <td><time datetime="2026-10-28">Oct 28, 2026</time></td>
-                </tr>
+                        </td>
 
-                <!-- Task 2 -->
-                <tr>
-                    <td>
-                        <div class="task-info">
-                            <span class="task-checkbox"></span>
-                            <span class="task-name">Build Shopping Cart</span>
-                        </div>
-                    </td>
-                    <td>E-commerce Platform</td>
-                    <td><span class="task-status status-progress">In Progress</span></td>
-                    <td><span class="task-priority priority-high">High</span></td>
-                    <td><time datetime="2026-11-03">Nov 3, 2026</time></td>
-                </tr>
+                        <!-- Priority -->
+                        <td>
+                            <span
+                                class="task-priority"
+                                [class.priority-high]="task.priority === 'high'"
+                                [class.priority-medium]="task.priority === 'medium'"
+                                [class.priority-low]="task.priority === 'low'"
+                            >
+                                {{ task.priority }}
+                            </span>
+                        </td>
 
-                <!-- Task 3 -->
-                <tr>
-                    <td>
-                        <div class="task-info">
-                            <span class="task-checkbox"></span>
-                            <span class="task-name">Create Dashboard Layout</span>
-                        </div>
-                    </td>
-                    <td>TaskFlow Dashboard</td>
-                    <td><span class="task-status status-progress">In Progress</span></td>
-                    <td><span class="task-priority priority-high">High</span></td>
-                    <td><time datetime="2026-11-05">Nov 5, 2026</time></td>
-                </tr>
+                        <!-- Due Date -->
+                        <td>
+                            <time [attr.datetime]="task.dueDate">
+                                {{ task.dueDate | date:'MMM d, yyyy' }}
+                            </time>
+                        </td>
 
-                <!-- Task 4 -->
-                <tr>
-                    <td>
-                        <div class="task-info">
-                            <span class="task-checkbox"></span>
-                            <span class="task-name">Write API Documentation</span>
-                        </div>
-                    </td>
-                    <td>TaskFlow Dashboard</td>
-                    <td><span class="task-status status-todo">To Do</span></td>
-                    <td><span class="task-priority priority-medium">Medium</span></td>
-                    <td><time datetime="2026-11-08">Nov 8, 2026</time></td>
-                </tr>
+                    </tr>
 
-                <!-- Task 5 -->
-                <tr>
-                    <td>
-                        <div class="task-info">
-                            <span class="task-checkbox"></span>
-                            <span class="task-name">Fix Responsive Navigation</span>
-                        </div>
-                    </td>
-                    <td>Portfolio Website</td>
-                    <td><span class="task-status status-todo">To Do</span></td>
-                    <td><span class="task-priority priority-low">Low</span></td>
-                    <td><time datetime="2026-11-12">Nov 12, 2026</time></td>
-                </tr>
+                } @empty {
 
-                <!-- Task 6 -->
-                <tr>
-                    <td>
-                        <div class="task-info">
-                            <span class="task-checkbox"></span>
-                            <span class="task-name">Implement User Authentication</span>
-                        </div>
-                    </td>
-                    <td>E-commerce Platform</td>
-                    <td><span class="task-status status-progress">In Progress</span></td>
-                    <td><span class="task-priority priority-high">High</span></td>
-                    <td><time datetime="2026-11-01">Nov 1, 2026</time></td>
-                </tr>
+                    <tr>
+                        <td colspan="5" class="empty-message">
+                            No tasks found.
+                        </td>
+                    </tr>
 
+                }
             </tbody>
         </table>
 

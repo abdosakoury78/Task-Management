@@ -11,7 +11,7 @@
         (click)="changeStatus('all')"
         >
             <span class="status-label">All Tasks</span>
-            <span class="status-count">19</span>
+            <span class="status-count">{{tasks.length}}</span>
         </button>
 
         <button
@@ -22,7 +22,7 @@
         (click)="changeStatus('todo')"
         >
             <span class="status-label">To Do</span>
-            <span class="status-count">1</span>
+            <span class="status-count">{{todoTasks.length}}</span>
         </button>
 
         <button
@@ -33,7 +33,7 @@
         (click)="changeStatus('progress')"
         >
             <span class="status-label">In Progress</span>
-            <span class="status-count">6</span>
+            <span class="status-count">{{inProgressTasks.length}}</span>
         </button>
 
         <button
@@ -44,11 +44,11 @@
         (click)="changeStatus('done')"
         >
             <span class="status-label">Done</span>
-            <span class="status-count">12</span>
+            <span class="status-count">{{doneTasks.length}}</span>
         </button>
 
     </nav>
 
-    <app-tasks-body></app-tasks-body>
+    <app-tasks-body [selectedStatus]="filterStatus"></app-tasks-body>
 
 </div>
