@@ -13,6 +13,7 @@ import { DatePipe } from '@angular/common';
 })
 export class ProjectsBodyComponent implements OnInit {
   @Input() viewMode: 'list' | 'grid' = 'grid';
+  @Input() searchTerm!:string;
 
   private projectsService = inject(ProjectsService);
   private authService = inject(AuthService);
@@ -35,5 +36,13 @@ export class ProjectsBodyComponent implements OnInit {
           console.error('Failed to load projects:', error);
         }
       });
+  }
+
+  filterProjectsByName() : Projects[] {
+    const projectFiltered = this.projects;
+    this.searchTerm = this.searchTerm.trim().toLowerCase();
+    return projectFiltered.filter(project => {
+      return project.name.trim().toLowerCase().includes(this.searchTerm);
+    })
   }
 }

@@ -28,9 +28,9 @@
         <button
         type="button"
         class="status"
-        [class.active]="filterStatus === 'progress'"
-        [attr.aria-pressed]="filterStatus === 'progress'"
-        (click)="changeStatus('progress')"
+        [class.active]="filterStatus === 'in-progress'"
+        [attr.aria-pressed]="filterStatus === 'in-progress'"
+        (click)="changeStatus('in-progress')"
         >
             <span class="status-label">In Progress</span>
             <span class="status-count">{{inProgressTasks.length}}</span>

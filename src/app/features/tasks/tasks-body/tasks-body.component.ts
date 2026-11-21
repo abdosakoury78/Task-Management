@@ -1,14 +1,15 @@
-import { Component, inject, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { TasksService } from '../services/tasks.service';
 import { Projects } from '../../../shared/models/projects';
 import { Task, TaskWithProjectName } from '../../../shared/models/task';
 import { Users } from '../../../shared/models/users';
 import { AuthService } from '../../../core/services/auth.service';
-import { DatePipe } from '@angular/common';
+import {DatePipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tasks-body',
-  imports: [DatePipe],
+  imports: [DatePipe, FormsModule],
   templateUrl: './tasks-body.component.html',
   styleUrl: './tasks-body.component.css'
 })
@@ -21,6 +22,7 @@ export class TasksBodyComponent implements OnInit {
   selectedProjectId: string = 'all';
   selectedPriority: string = 'all';
   @Input() selectedStatus!: string;
+  searchTerm: string = '';
   // tasksWithProjectName : TaskWithProjectName[] = [];
 
   ngOnInit() {
@@ -47,7 +49,7 @@ export class TasksBodyComponent implements OnInit {
   }
 
   getFilteredTasks(): TaskWithProjectName[] {
-    const tasksWithProjectName = this.getTasksWithProjectName();
+    const tasksWithProjectName = this.searchTasks(this.searchTerm);
 
     return tasksWithProjectName.filter(task => {
       const matchesProject =
@@ -63,6 +65,14 @@ export class TasksBodyComponent implements OnInit {
         task.status === this.selectedStatus;
 
       return matchesProject && matchesPriority && matchesStatus;
+    });
+  }
+
+  searchTasks(searchTerm: string): TaskWithProjectName[] {
+    const tasksWithProjectName = this.getTasksWithProjectName();
+    searchTerm = searchTerm.trim().toLowerCase();
+    return tasksWithProjectName.filter(task => {
+      return task.title.toLowerCase().includes(searchTerm);
     });
   }
 }

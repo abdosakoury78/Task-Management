@@ -6,7 +6,7 @@
         <!-- Grid View -->
         <div class="projects-grid">
 
-            @for (project of projects; track project.id) {
+            @for (project of filterProjectsByName(); track project.id) {
             <article class="project-card">
 
                 <header class="project-header">

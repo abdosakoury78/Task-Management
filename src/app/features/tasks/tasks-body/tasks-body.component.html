@@ -12,6 +12,8 @@
                 type="search"
                 placeholder="Search tasks..."
                 aria-label="Search tasks"
+                [(ngModel)]="searchTerm"
+                (search)="searchTasks(searchTerm)"
             >
         </div>
 

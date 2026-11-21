@@ -96,7 +96,7 @@
       "description": "Implement the shopping cart and checkout flow.",
       "projectId": "1",
       "assigneeId": "1",
-      "status": "inProgress",
+      "status": "in-progress",
       "priority": "high",
       "dueDate": "2026-11-13"
     },
@@ -106,7 +106,7 @@
       "description": "Build the main responsive layout for the task management dashboard.",
       "projectId": "2",
       "assigneeId": "1",
-      "status": "inProgress",
+      "status": "in-progress",
       "priority": "high",
       "dueDate": "2026-11-15"
     },
@@ -136,7 +136,7 @@
       "description": "Add the user authentication flow to the e-commerce application.",
       "projectId": "1",
       "assigneeId": "1",
-      "status": "inProgress",
+      "status": "in-progress",
       "priority": "high",
       "dueDate": "2026-11-20"
     }
