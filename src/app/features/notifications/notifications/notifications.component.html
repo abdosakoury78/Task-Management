@@ -6,10 +6,10 @@
     <header class="notification-header">
       <div class="notification-number">
         <h2>Notifications</h2>
-        <span>1</span>
+        <span>{{ unreadCount }}</span>
       </div>
 
-      <button type="button" class="mark-all-read">
+      <button type="button" class="mark-all-read" (click)="markAllRead()">
         Mark All Read
       </button>
     </header>
@@ -17,55 +17,53 @@
     <!-- Notifications List -->
     <div class="notifications-body">
 
-      <!-- Unread Notification -->
-      <article class="notification unread">
-        <div class="notification-info">
+      @for (notification of notifications; track notification.id) {
+        <article
+          class="notification"
+          [class.unread]="!notification.read"
+          (click)="markRead(notification)"
+        >
 
-          <div class="avatar" aria-hidden="true">
-            <span>AH</span>
+          <div class="notification-info">
+
+            <div class="avatar" aria-hidden="true">
+              <span>{{ notification.sender?.initials }}</span>
+            </div>
+
+            <div class="notification-content">
+
+              <p class="notification-description">
+                {{ notification.sender?.name }}
+                assigned you to
+                <strong>{{ notification.task?.title }}</strong>
+              </p>
+
+              <time
+                class="notification-time"
+                [attr.datetime]="notification.createdAt"
+              >
+                {{ notification.createdAt | date:'MMM d' }}
+              </time>
+
+            </div>
+
           </div>
 
-          <div class="notification-content">
-            <p class="notification-description">
-              Ahmed assigned you to
-              <strong>Build shopping cart</strong>
-            </p>
+          @if (!notification.read) {
+            <span
+              class="notification-mark"
+              role="img"
+              aria-label="Unread notification">
+            </span>
+          }
 
-            <time class="notification-time" datetime="2026-08-22">
-              Aug 22
-            </time>
-          </div>
+        </article>
 
-        </div>
-
-        <span
-          class="notification-mark"
-          role="img"
-          aria-label="Unread notification">
-        </span>
-      </article>
-
-      <!-- Read Notification -->
-      <article class="notification">
-        <div class="notification-info">
-
-          <div class="avatar" aria-hidden="true">
-            <span>AH</span>
-          </div>
-
-          <div class="notification-content">
-            <p class="notification-description">
-              Ahmed assigned you to
-              <strong>Build shopping cart</strong>
-            </p>
-
-            <time class="notification-time" datetime="2026-08-22">
-              Aug 22
-            </time>
-          </div>
-
-        </div>
-      </article>
+      } @empty {
+        <p class="empty-notifications">
+          No notifications yet.
+        </p>
+      }
 
     </div>
   </div>

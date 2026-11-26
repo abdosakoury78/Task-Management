@@ -7,9 +7,11 @@
 
     <!-- Actions -->
     <div class="navbar-actions">
-      <button type="button" class="notification-button" aria-label="Notifications">
+      <button type="button" class="notification-button" aria-label="Notifications" routerLink="/dashboard/notifications">
         <i class="fa-solid fa-bell"></i>
-        <span class="notification-dot"></span>
+        @if(unreadCount) {
+          <span class="notification-dot"></span>
+        }
       </button>
 
       <button type="button" class="profile-button">

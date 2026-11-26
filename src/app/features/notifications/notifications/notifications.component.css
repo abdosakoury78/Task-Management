@@ -166,6 +166,31 @@
   border-radius: var(--radius-full);
 }
 
+/* Empty Notifications */
+
+.empty-notifications {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.empty-notifications i {
+  font-size: 32px;
+  color: var(--primary-color);
+  opacity: 0.6;
+}
+
+.empty-notifications p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
 /* Responsive */
 
 @media (max-width: 576px) {

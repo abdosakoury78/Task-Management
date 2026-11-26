@@ -37,7 +37,9 @@
     <a routerLink="/dashboard/notifications" routerLinkActive="active" class="nav-item">
       <i class="fa-solid fa-bell"></i>
       <span>Notifications</span>
-      <span class="notification-dot"></span>
+      @if(unreadCount) {
+        <span class="notification-dot"></span>
+      }
     </a>
 
     <div class="nav-divider"></div>
