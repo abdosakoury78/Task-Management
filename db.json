@@ -87,7 +87,7 @@
       "assigneeId": "1",
       "status": "done",
       "priority": "medium",
-      "dueDate": "2026-10-28"
+      "dueDate": "2026-12-28"
     },
     {
       "id": "2",
@@ -97,7 +97,7 @@
       "assigneeId": "1",
       "status": "in-progress",
       "priority": "high",
-      "dueDate": "2026-11-13"
+      "dueDate": "2026-12-02"
     },
     {
       "id": "3",
@@ -107,7 +107,7 @@
       "assigneeId": "1",
       "status": "in-progress",
       "priority": "high",
-      "dueDate": "2026-11-15"
+      "dueDate": "2026-12-05"
     },
     {
       "id": "4",
@@ -117,7 +117,7 @@
       "assigneeId": "2",
       "status": "todo",
       "priority": "medium",
-      "dueDate": "2026-11-16"
+      "dueDate": "2026-12-08"
     },
     {
       "id": "5",
@@ -127,7 +127,7 @@
       "assigneeId": "2",
       "status": "todo",
       "priority": "low",
-      "dueDate": "2026-11-18"
+      "dueDate": "2026-12-12"
     },
     {
       "id": "6",
@@ -137,7 +137,7 @@
       "assigneeId": "1",
       "status": "in-progress",
       "priority": "high",
-      "dueDate": "2026-11-20"
+      "dueDate": "2026-12-15"
     }
   ],
   "notifications": [
