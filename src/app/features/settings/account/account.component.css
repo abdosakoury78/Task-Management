@@ -1,0 +1,162 @@
+.error-message {
+    color: #dc2626;
+    font-size: 12px;
+}
+
+.form-group input.ng-invalid.ng-touched {
+    border-color: #dc2626;
+}
+
+
+.account-container {
+    width: 100%;
+}
+
+/* Profile Header */
+
+.account-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.profile-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.profile-info h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.profile-info p {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Divider */
+
+.account-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin-bottom: 28px;
+}
+
+/* Form */
+
+.account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    max-width: 600px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* Actions */
+
+.form-actions {
+    display: flex;
+    /* justify-content: flex-end; */
+    margin-top: 8px;
+}
+
+.form-actions button {
+    padding: 11px 20px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.form-actions button:hover {
+    background: var(--primary-hover);
+}
+
+app-alert {
+    position: absolute;
+    top: 10%;
+    right: 30%;
+    z-index: 10;
+    width: min(100%, 500px);
+
+    animation: alert-enter 0.35s ease-out forwards;
+}
+
+@keyframes alert-enter {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Responsive */
+
+@media (max-width: 480px) {
+    .account-header {
+        gap: 12px;
+    }
+
+    .profile-avatar {
+        width: 54px;
+        height: 54px;
+        font-size: 17px;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+}

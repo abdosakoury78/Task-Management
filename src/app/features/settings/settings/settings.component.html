@@ -1,0 +1,27 @@
+<div class="settings-container">
+
+    <div class="settings-header">
+        <h1>Settings</h1>
+        <p>Manage your account preferences and security settings.</p>
+    </div>
+
+    <div class="settings-layout">
+
+        <nav class="settings-nav">
+            <a routerLink="account" routerLinkActive="active">
+                <i class="fa-regular fa-user"></i>
+                <span>Account</span>
+            </a>
+
+            <a routerLink="security" routerLinkActive="active">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Security</span>
+            </a>
+        </nav>
+
+        <main class="settings-content">
+            <router-outlet></router-outlet>
+        </main>
+
+    </div>
+</div>

@@ -20,4 +20,10 @@ export class AuthService {
 
   }
 
+  updateUser(userId: string, userData: Partial<Users>) {
+    return this.http.patch<Users>(
+      `${this.apiUrl}/${userId}`,
+      userData
+    );
+  }
 }

@@ -1,0 +1,113 @@
+
+<div class="security-container">
+
+    @if (showAlert) {
+        <app-alert
+            [type]="alertType"
+            [title]="alertTitle"
+            [message]="alertMessage"
+            [dismissible]="true"
+            (closed)="closeAlert()"
+        />
+    }
+
+    <div class="security-header">
+        <h2>Change Password</h2>
+        <p>Update your password to keep your account secure.</p>
+    </div>
+
+    <div class="security-divider"></div>
+
+    <form
+        class="security-form"
+        [formGroup]="securityForm"
+        (ngSubmit)="saveChanges()"
+    >
+
+        <!-- Current Password -->
+        <div class="form-group">
+            <label for="currentPassword">Current Password</label>
+
+            <input
+                type="password"
+                id="currentPassword"
+                formControlName="currentPassword"
+                placeholder="Enter your current password"
+            >
+
+            @if (securityForm.controls.currentPassword.touched) {
+                @if (securityForm.controls.currentPassword.hasError('required')) {
+                    <small class="error-message">
+                        Current password is required.
+                    </small>
+                }
+                @else if (securityForm.controls.currentPassword.hasError('incorrectCurrentPassword')) {
+                    <small class="error-message">
+                        Current password is incorrect.
+                    </small>
+                }
+            }
+        </div>
+
+        <!-- New Password -->
+        <div class="form-group">
+            <label for="newPassword">New Password</label>
+
+            <input
+                type="password"
+                id="newPassword"
+                formControlName="newPassword"
+                placeholder="Enter your new password"
+            >
+
+            @if (securityForm.controls.newPassword.touched) {
+                @if (securityForm.controls.newPassword.hasError('required')) {
+                    <small class="error-message">
+                        New password is required.
+                    </small>
+                }
+                @else if (securityForm.controls.newPassword.hasError('minlength')) {
+                    <small class="error-message">
+                        Password must be at least 6 characters.
+                    </small>
+                }
+            }
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+            <label for="confirmPassword">Confirm New Password</label>
+
+            <input
+                type="password"
+                id="confirmPassword"
+                formControlName="confirmPassword"
+                placeholder="Confirm your new password"
+            >
+
+            @if (securityForm.controls.confirmPassword.touched) {
+                @if (securityForm.controls.confirmPassword.hasError('required')) {
+                    <small class="error-message">
+                        Please confirm your password.
+                    </small>
+                }
+                @else if (
+                    securityForm.controls.confirmPassword.value !==
+                    securityForm.controls.newPassword.value
+                ) {
+                    <small class="error-message">
+                        Passwords do not match.
+                    </small>
+                }
+            }
+        </div>
+
+        <div class="form-actions">
+            <button type="submit">
+                Save Changes
+            </button>
+        </div>
+
+    </form>
+
+</div>

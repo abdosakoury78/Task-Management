@@ -1,0 +1,84 @@
+<div class="account-container">
+    @if (showAlert) {
+        <app-alert
+            [type]="alertType"
+            [title]="alertTitle"
+            [message]="alertMessage"
+            [dismissible]="true"
+            (closed)="closeAlert()"
+        />
+    }
+    <div class="account-header">
+        <div class="profile-avatar">
+            {{ initials }}
+        </div>
+
+        <div class="profile-info">
+            <h2>{{ user?.name }}</h2>
+            <p>Manage your personal information</p>
+        </div>
+    </div>
+
+    <div class="account-divider"></div>
+
+    <form class="account-form"
+          [formGroup]="accountForm"
+          (ngSubmit)="saveChanges()">
+
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                formControlName="name"
+                placeholder="Enter your full name"
+            >
+
+            @if (accountForm.get('name')?.touched &&
+                 accountForm.get('name')?.hasError('required')) {
+                <small class="error-message">Name is required.</small>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                formControlName="email"
+                placeholder="Enter your email"
+            >
+
+            @if (accountForm.get('email')?.touched &&
+                 accountForm.get('email')?.hasError('required')) {
+                <small class="error-message">Email is required.</small>
+            }
+
+            @if (accountForm.get('email')?.touched &&
+                 accountForm.get('email')?.hasError('email')) {
+                <small class="error-message">Enter a valid email address.</small>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="role">Job Title</label>
+            <input
+                type="text"
+                id="role"
+                formControlName="role"
+                placeholder="Enter your job title"
+            >
+
+            @if (accountForm.get('role')?.touched &&
+                 accountForm.get('role')?.hasError('required')) {
+                <small class="error-message">Job title is required.</small>
+            }
+        </div>
+
+        <div class="form-actions">
+            <button type="submit">Save Changes</button>
+        </div>
+
+    </form>
+
+</div>

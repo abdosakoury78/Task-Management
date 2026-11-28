@@ -159,5 +159,6 @@
       "read": true,
       "createdAt": "2026-11-11T08:30:00.000Z"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
